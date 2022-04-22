@@ -1,38 +1,476 @@
+@font-face {
+  font-family: "open-sans";
+  src: url("./open-sans/open-sans-v26-latin-regular.woff2") format("woff2"),
+    url("./open-sans/open-sans-v26-latin-regular.woff") format("woff"),
+    url("./open-sans/open-sans-v26-latin-regular.svg") format("svg"),
+    url("./open-sans/open-sans-v26-latin-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+data taken from the sale contract.*/
+.BlockchainData {
+  color: #009bff;
+  font-weight: 900;
+}
+
+body {
+  background-image: url("https://topstars.app/wp-content/uploads/2022/01/fondo-presentacion-scaled.jpg");
+  background-color: #000;
+  font-family: "open-sans";
+}
+
+header.mb-5 {
+  margin: -16px 0 0px 0;
+  background-color: #222;
+}
+
+.main {
+  margin-bottom: 20vh;
+}
+
+
+.mb-5 {
+  margin-bottom: 0 !important;
+}
+
+
+
+/** =================================================================
+                Estructura v2.0
+====================================================================*/
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-container {
+  width: 100%;
+  max-width: 1536px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 720px) {
+  /* .App-container{
+    max-width: 720px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }  */
+
+  .title-info {
+    font-size: 17px;
+  }
+
+  img.logoTelegram {
+    width: 14px;
+    height: 14px;
+  }
+
+  .bnb-amount {
+    font-size: 5px;
+  }
+
+  .form-wrapper .amount {
+    border-radius: 17px;
+    font-size: 7px;
+    height: 40px;
+    margin-left: 6px;
+  }
+
+  ::placeholder {
+    font-size: 13px;
+  }
+
+  .buy {
+    width: 90%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 540px) {
+  .App-container {
+    max-width: 540px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .buy {
+    font-size: 9px;
+    width: 90%;
+  }
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  align-content: center;
+  column-gap: 20px;
+  margin-top: 50px;
+}
+
+.partners img {
+  align-self: center;
+  justify-self: center;
+}
+
+/*-----------------------------------------------------------*/
+
+
+.App-info,
+.App-buy {
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  border-radius: 25px;
+
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 600px) {
+  .App-info .block-info-top {
+    grid-template-columns: 1fr;
+  }
+
+  .App-info .block-info-rrss a {
+    margin-right: 40px;
+  }
+
+  .App-info .column-info-deta {
+    grid-template-columns: 1fr;
+  }
+
+  .connectionMM,
+  .BNB,
+  .tops {
+    margin-bottom: 10px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 460px) {
+
+  .App-info .block-info-rrss a {
+    margin-right: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-buy {
+    display: block;
   }
+
+  .timer .clock section {
+    padding: 15px 12px 23px;
+  }
+
+  .partners {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+  }
+}
+
+.block-info-top {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  width: 100%;
+  align-content: initial;
+  column-gap: 20px;
+  margin-bottom: 20px;
+}
+
+h2.title-info {
+  text-align: left;
+  font-weight: 900;
+  padding-top: 8px;
+  font-size: 24px;
+}
+
+h2.title-info.titventa {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.block-info-top p,
+.block-info-top h2 {
+  margin: 0;
+}
+
+.block-info-descrip {
+  width: 100%;
+  text-align: left;
+}
+
+.block-info-descrip p,
+.block-info-deta p {
+  text-align: left;
+  font-size: 14px;
+}
+
+.block-info-deta p {
+  font-weight: 600;
+}
+
+.block-info-deta p {
+  color: #9d9d9d;
+}
+
+.block-info-deta span.light {
+  font-weight: 100;
+  color: #fff;
+}
+
+.block-info-rrss,
+.block-info-deta {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.block-info-deta.last {
+  margin-bottom: 0px;
+}
+
+.block-info-rrss a {
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.block-info-deta h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #d094ea;
+  margin-bottom: 20px;
+}
+
+.column-info-deta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.div-sustitucion {
+  width: 100%;
+}
+
+.block-buy-top-title h1 {
+  font-weight: 900;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.block-buy-top-title p {
+  font-size: 18px;
+}
+
+.exclusive-benefits {
+  width: 1140px;
+  margin: 140px auto 100px;
+}
+
+.top-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-top: 80px;
+}
+
+.col-top-benefits {
+  background-color: #1b1d31;
+  padding: 50px 20px 32px;
+  border-radius: 25px;
+}
+
+.col-top-benefits p {
+  padding-top: 30px;
+}
+
+.col-top-benefits h3 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.benefits {
+  width: 1140px;
+  margin: 120px auto 100px;
+  background-color: #1b1d31;
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.benefits h2,
+.exclusive-benefits h2 {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.table-benefits {
+  margin-top: 100px;
+}
+
+.container-buy-genesis {
+  width: 1140px;
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  column-gap: 0px;
+}
+
+.col-info-buy {
+  background-color: #171727;
+  width: 600px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 20px 20px 40px;
+}
+
+.col-genesis {
+  margin: auto 0;
+}
+
+.supply-genesis {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.genesis-minted {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.col-mint {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 40px;
+}
+
+p.mint-price-2 {
+  color: #838383;
+}
+
+.container-buy-counter .mint-price p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.genesis-wallet {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  border-bottom: 1px solid #fff;
+  width: 100%;
+}
+
+.table-benefits .row .cell {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px;
+}
+
+.table-benefits .row .cell:nth-child(2) {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.table-benefits .row .cell:nth-child(3) {
+  border-right: 1px solid #fff;
+}
+
+.table-benefits p.table-title {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.table-benefits p.table-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (min-width: 1140px) {
+  .benefits-responsive {
+    display: none;
+  }
+}
+
+@media (max-width: 1140px) {
+  .genesis-card {
+    width: 400px;
+    height: 318px;
+  }
+
+  .benefits {
+    display: none;
+  }
+
+  .table-benefits {
+    text-align: center;
+  }
+
+  .App-buy {
+    padding: 0px;
+  }
+}
+
+.block-buy-top {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  column-gap: 20px;
+  width: 100%;
+  text-align: initial;
+}
+
+.block-buy-top p img.logo-tops {
+  margin-top: 9px;
+}
+
+.swap-tops {
+  font-size: 18px;
+  font-weight: 600;
+  color: #999;
+}
+
+.container-buy-counter {
+  background-color: #000;
+  border-radius: 25px;
+  padding: 100px 25px 15px 25px;
+  width: 100%;
+  margin: 60px 0 40px 0;
+}
+
+
+/** ================================================================
+Boton Metamask NavBar
+====================================================================*/
+
+.connectionMM,
+.BNB,
+.tops {
+  width: 171px;
+  height: 36px;
+  border-radius: 16px;
+  background-size: cover;
+  box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px inset;
+  font-size: 14px;
+  padding-bottom: 2px;
+  color: #000000;
+  background-color: rgb(221, 221, 221);
+  border: 0;
+}
+
+
+
+.App-footer {
+  margin: 80px 0 40px;
 }
